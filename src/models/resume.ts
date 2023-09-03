@@ -1,8 +1,10 @@
 class Resume {
-    total:string;
+    id: string;
+    total:object;
     porcentaje:string;
     progreso:string;
-    constructor(total:string,porcentaje:string,progreso:string){
+    constructor(id:string, total:object,porcentaje:string,progreso:string){
+        this.id=id;
         this.total=total;
         this.porcentaje=porcentaje;
         this.progreso=progreso;

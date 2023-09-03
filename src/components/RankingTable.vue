@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import type { PropType } from 'vue/dist/vue.js';
-
 const props = defineProps({
-  resume: {
-    type: Array as PropType<Resume[]>,
+  ranking: {
+    type: Array as PropType<Ranking[]>,
     required: true,
   },
 });
@@ -14,7 +13,10 @@ const props = defineProps({
     <thead>
       <tr>
         <th class="text-left">
-          Resumen
+          Ficha
+        </th>
+        <th class="text-left">
+          Nombre
         </th>
         <th class="text-left">
           Juego 1
@@ -25,22 +27,37 @@ const props = defineProps({
         <th class="text-left">
           Juego 3
         </th>
+        <th class="text-left">
+          Total
+        </th>
+        <th class="text-left">
+          Posición
+        </th>
       </tr>
     </thead>
     <tbody>
-      <template v-for="item in resume" :key="resume.id">
+      <template v-for="item in ranking" :key="ranking.id">
         <tr>
           <td class="text-left">
-            {{ item.id}}
+            {{ item.ficha}}
           </td>
           <td class="text-left">
-            {{ item.total.horas }} : {{ item.total.minutos }} : {{ item.total.segundos }}
+            {{ item.nombre }}
           </td>
           <td class="text-left">
-            {{ item.porcentaje }} %
+            {{ item.juego1 }}
           </td>
           <td class="text-left">
-            {{ item.progreso }} de 3
+            {{ item.juego2 }}
+          </td>
+          <td class="text-left">
+            {{ item.juego3 }}
+          </td>
+          <td class="text-left">
+            {{ item.total }}
+          </td>
+          <td class="text-left">
+            {{ item.posicion }}
           </td>
         </tr>
       </template>
