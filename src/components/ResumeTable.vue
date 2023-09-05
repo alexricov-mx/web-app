@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { PropType } from 'vue/dist/vue.js';
+import type { Resume } from '@/models/resume';
 
 const props = defineProps({
   resume: {
@@ -31,10 +32,10 @@ const props = defineProps({
       <template v-for="item in resume" :key="resume.id">
         <tr>
           <td class="text-left">
-            {{ item.id}}
+            {{ item.id }}
           </td>
           <td class="text-left">
-            {{ item.total.horas }} : {{ item.total.minutos }} : {{ item.total.segundos }}
+            {{ item.total }} 
           </td>
           <td class="text-left">
             {{ item.porcentaje }} %

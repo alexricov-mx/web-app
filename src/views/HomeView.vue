@@ -1,6 +1,11 @@
 <script setup lang="ts">
+
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+
 import ResumeTable from '@/components/ResumeTable.vue'
 import RankingTable from '@/components/RankingTable.vue'
+import MapComponent from '@/components/MapComponent.vue';
 
 const resume = [
   {
@@ -64,15 +69,37 @@ const ranking = [
     posicion:"3",    
   }
 ]
+
+// TODO:  las funciones para obtener mis datos de la API
+// Resumen
+// Ranking
+// coordenadas para llenar mi mapa
+
+// TODO: onMounted para ejecutar las funciones de la API
+// onMounted(async () => {
+//   try {
+//     const response = await axios.get('../assets/arcades.json'); // Asegúrate de que la ruta sea correcta
+//     // datos.value = response.data;
+//     datos = JSON.parse(response.data)
+//   } catch (error) {
+//     console.error('Error al cargar el archivo JSON', error);
+//   }
+// });
 </script>
 
 <template>
-  <h1>Home</h1>
+  <h1>Tablero APP IncluPemex PNUD</h1>
   <div>
-    <ResumeTable :resume="resume" />
-  </div>    
+    <div>
+      <ResumeTable :resume="resume" />
+    </div>    
+    <br><br>
+    <div>
+      <RankingTable :ranking="ranking" />
+    </div>
+  </div>
   <br><br>
   <div>
-    <RankingTable :ranking="ranking" />
+    <MapComponent/>
   </div>
-</template>
+</template>@/models/tipo-geojson

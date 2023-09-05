@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue/dist/vue.js';
+import type { Ranking } from '@/models/ranking';
+
 const props = defineProps({
   ranking: {
     type: Array as PropType<Ranking[]>,
@@ -9,7 +11,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <v-table theme="dark">
+  <v-table>
     <thead>
       <tr>
         <th class="text-left">
