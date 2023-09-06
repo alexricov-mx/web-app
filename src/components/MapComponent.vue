@@ -1,23 +1,34 @@
-<template>
-  <div style="height: 75vh; width: 50vw;">
-    <l-map v-model="zoom" v-model:zoom="zoom" :center="[21.160377, -101.109149]" @move="log('move')">      
-      <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>      
-      <l-control-layers />
+<template>  
+  <div style="height: 75vh;">
+    <l-map v-model="zoom" v-model:zoom="zoom" :center="[21.160377, -101.109149]">
+      <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" name="IncluP"
+        layer-type="base"></l-tile-layer>
       <l-geo-json v-if="show" :geojson="polygonmx" :options="polygonmx" :options-style="styleFunction" />
+      <div v-for="punto in puntos">
+        <l-marker :lat-lng="[punto.lat, punto.lng]"> </l-marker>
+      </div>
     </l-map>
-  </div>
+  </div>  
 </template>
 <script lang="ts">
-import {
-  LMap,  LIcon,  LTileLayer,  LMarker,  LControlLayers,  LTooltip,  LPopup,
-  LPolyline,  LPolygon,  LRectangle,  LGeoJson, } from "@vue-leaflet/vue-leaflet";
+import { LMap, LIcon, LTileLayer, LMarker, LGeoJson } from "@vue-leaflet/vue-leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from 'axios';
+import type { punto } from "@/models/punto";
 
 export default {  
+  props: {
+    puntos: {
+      type: Array<punto>,
+      required: true,
+    }
+  },
   components: {
-    LMap,    LIcon,    LTileLayer,    LMarker,    LControlLayers,    LTooltip,    LPopup,
-    LPolyline,    LPolygon,    LRectangle,    LGeoJson,
+    LMap, 
+    LIcon,
+    LTileLayer,
+    LMarker,    
+    LGeoJson
   },
   data() {
     return {
@@ -38,7 +49,7 @@ export default {
           color: "red", 
           opacity: 1,
           fillColor: fillColor,
-          fillOpacity: 1
+          fillOpacity: .2
         };
       };
     },
@@ -59,4 +70,4 @@ export default {
     },    
   },
 };
-</script>
+</script>@/models/punto

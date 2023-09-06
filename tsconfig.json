@@ -1,5 +1,9 @@
 {
   "files": [],
+  "include": [
+    "src/**/*.ts", // Ajusta la ruta según tu estructura de proyecto
+    "custom-types/leaflet-markercluster.d.ts" // Ruta al archivo de declaración de tipos
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"
