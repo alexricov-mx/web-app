@@ -11,58 +11,34 @@ const props = defineProps({
 </script>
 
 <template>
-  <v-table>
-    <thead>
-      <tr>
-        <th class="text-left">
-          Ficha
-        </th>
-        <th class="text-left">
-          Nombre
-        </th>
-        <th class="text-left">
-          Juego 1
-        </th>
-        <th class="text-left">
-          Juego 2
-        </th>
-        <th class="text-left">
-          Juego 3
-        </th>
-        <th class="text-left">
-          Total
-        </th>
-        <th class="text-left">
-          Posición
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <template v-for="item in ranking" :key="ranking.id">
-        <tr>
-          <td class="text-left">
-            {{ item.ficha}}
-          </td>
-          <td class="text-left">
-            {{ item.nombre }}
-          </td>
-          <td class="text-left">
-            {{ item.juego1 }}
-          </td>
-          <td class="text-left">
-            {{ item.juego2 }}
-          </td>
-          <td class="text-left">
-            {{ item.juego3 }}
-          </td>
-          <td class="text-left">
-            {{ item.total }}
-          </td>
-          <td class="text-left">
-            {{ item.posicion }}
-          </td>
-        </tr>
-      </template>
-    </tbody>
-  </v-table>
+  <v-container>
+    <v-row>
+      <v-col>Ficha</v-col>
+      <v-col>Nombre</v-col>
+      <v-col>Juego 1</v-col>
+      <v-col v-show="false">Tiempo Juego 1</v-col>
+      <v-col>Juego 2</v-col>
+      <v-col v-show="false">Tiempo Juego 2</v-col>
+      <v-col>Juego 3</v-col>
+      <v-col v-show="false">Tiempo Juego 3</v-col>
+      <v-col>Juego Total</v-col>
+      <v-col v-show="false">Primer uso</v-col>
+      <v-col v-show="false">Ultimo uso</v-col>
+      <v-col>Posición</v-col>
+    </v-row>    
+    <v-row v-for="item in ranking" :key="item.posicion">
+      <v-col> {{ item.ficha }} </v-col>
+      <v-col> {{ item.nombre }}</v-col>
+      <v-col> {{ item.juego1 }}</v-col>
+      <v-col v-show="false"> {{ item.tiempoJuego1 }}</v-col>
+      <v-col> {{ item.juego2 }}</v-col>
+      <v-col v-show="false"> {{ item.tiempoJuego2 }}</v-col>
+      <v-col> {{ item.juego3 }}</v-col>
+      <v-col v-show="false"> {{ item.tiempoJuego3 }}</v-col>
+      <v-col> {{ item.total }}</v-col>
+      <v-col v-show="false"> {{ item.primerUso }}</v-col>
+      <v-col v-show="false"> {{ item.ultimoUso }}</v-col>
+      <v-col> {{ item.posicion }}</v-col>
+    </v-row>  
+  </v-container>  
 </template>

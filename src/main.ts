@@ -8,7 +8,7 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 // @ts-ignore
-import { aliases, mdi } from 'vuetify/lib/iconsets/mdi'
+import { aliases,mdi } from 'vuetify/lib/iconsets/mdi'
 
 const vuetify = createVuetify({
   components,

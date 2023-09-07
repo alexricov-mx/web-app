@@ -48,27 +48,42 @@ const ranking = [
     ficha:"445626",
     nombre:"Alex Rico",
     juego1:"5,324",
+    timpoJuego1:"5,324",
     juego2:"4,234",
+    tiempoJuego2:"4,234",
     juego3:"3,234",
+    tiempoJuego3:"3,234",
     total:"12,792",
+    primerUso:"2021-08-01",
+    ultimoUso:"2021-08-31",
     posicion:"1",
   },
   {
     ficha:"372415",
     nombre:"Efren Espinosa",
     juego1:"5,324",
+    tiempoJuego1:"5,324",
     juego2:"4,234",
+    tiempoJuego2:"4,234",
     juego3:"3,234",
+    tiempoJuego3:"3,234",
     total:"12,792",
+    primerUso:"2021-08-01",
+    ultimoUso:"2021-08-31",
     posicion:"2",
   },
   {
     ficha:"246631",
     nombre:"Checo Leal",
     juego1:"5,324",
+    tiempoJuego1:"5,324",
     juego2:"4,234",
+    tiempoJuego2:"4,234",
     juego3:"3,234",
+    tiempoJuego3:"3,234",
     total:"12,792",
+    primerUso:"2021-08-01",
+    ultimoUso:"2021-08-31",
     posicion:"3",    
   }
 ]
@@ -112,8 +127,8 @@ const puntos =
 // });
 </script>
 
-<template>
-  <h1>Tablero</h1>
+<template>  
+  <v-icon color="primary" icon="numeric-2"/>  
   <v-container fluid>
     <v-row>
       <v-col cols="12" md="6">
@@ -121,7 +136,7 @@ const puntos =
           <v-col>
             <v-card>
               <v-toolbar color="primary">
-                <v-toolbar-title>Resumen General</v-toolbar-title>
+                <v-toolbar-title>Resumen General</v-toolbar-title>                
               </v-toolbar>             
               <v-card-text>
                 <ResumeTable :resume="resume" />
