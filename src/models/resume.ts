@@ -1,6 +1,6 @@
 export interface Resume {
     id: string;
-    total:object;
-    porcentaje:string;
-    progreso:string;
+    juego1:string;
+    juego2:string;
+    juego3:string;
 }

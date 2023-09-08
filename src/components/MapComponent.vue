@@ -14,12 +14,12 @@
 import { LMap, LIcon, LTileLayer, LMarker, LGeoJson } from "@vue-leaflet/vue-leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from 'axios';
-import type { punto } from "@/models/punto";
+import type { Punto } from "@/models/punto";
 
 export default {  
   props: {
     puntos: {
-      type: Array<punto>,
+      type: Array<Punto>,
       required: true,
     }
   },

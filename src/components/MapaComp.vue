@@ -11,12 +11,12 @@ import 'leaflet/dist/leaflet.css';
 // import 'leaflet.markercluster/dist/MarkerCluster.Default.css'; // Estilos del agrupamiento
 // import 'leaflet.markercluster';
 import L from 'leaflet';
-import type { punto } from '@/models/punto';
+import type { Punto } from '@/models/punto';
   
 export default {
 props: {
     coordenadas: {
-    type: Array<punto>,
+    type: Array<Punto>,
     required: true,
     },
 },

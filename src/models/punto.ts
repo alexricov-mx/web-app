@@ -1,4 +1,4 @@
-export interface punto {    
+export interface Punto {    
     lat: number;
     lng: number;
 }

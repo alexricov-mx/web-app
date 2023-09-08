@@ -35,13 +35,13 @@ const props = defineProps({
             {{ item.id }}
           </td>
           <td class="text-left">
-            {{ item.total }} 
+            {{ item.juego1 }} 
           </td>
           <td class="text-left">
-            {{ item.porcentaje }} %
+            {{ item.juego2 }} 
           </td>
           <td class="text-left">
-            {{ item.progreso }} de 3
+            {{ item.juego3 }} 
           </td>
         </tr>
       </template>

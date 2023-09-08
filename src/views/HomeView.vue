@@ -7,48 +7,40 @@ import ResumeTable from '@/components/ResumeTable.vue'
 import RankingTable from '@/components/RankingTable.vue'
 import MapComponent from '@/components/MapComponent.vue';
 import MapaCom from '@/components/MapaComp.vue';
+import type { Ranking } from '@/models/ranking';
+import type { Resume } from '@/models/resume';
+import type { Punto } from '@/models/punto';
 
 const search = ref('');
 
-const resume = [
+const resume : Array<Resume> = [
   {
     id: "Total",
-    total: {
-      horas: "0",
-      minutos: "0",
-      segundos: "0",
-    },
-    porcentaje: "0",
-    progreso: "0",  
+    juego1:"00:00:00",
+    juego2:"00:00:00",
+    juego3:"00:00:00",
   },
   {
     id: "Porcentaje",
-    total: {
-      horas: "0",
-      minutos: "0",
-      segundos: "0",
-    },
-    porcentaje: "0",
-    progreso: "0",  
+    juego1: "5%",
+    juego2: "0%",
+    juego3: "0%",
+    
   },
   {
-    id: "Progreso",
-    total: {
-      horas: "0",
-      minutos: "0",
-      segundos: "0",
-    },
-    porcentaje: "0",
-    progreso: "0",  
+    id: "Progreso",    
+    juego1: "0",  
+    juego2: "0",
+    juego3: "0"
   }
-]
+];
 
-const ranking = [
+const ranking : Array<Ranking> = [
   {
     ficha:"445626",
     nombre:"Alex Rico",
     juego1:"5,324",
-    timpoJuego1:"5,324",
+    tiempoJuego1:"5,324",
     juego2:"4,234",
     tiempoJuego2:"4,234",
     juego3:"3,234",
@@ -86,9 +78,9 @@ const ranking = [
     ultimoUso:"2021-08-31",
     posicion:"3",    
   }
-]
+];
 
-const puntos =
+const puntos : Array<Punto> =
   [
     {
       "lat": 19.4326,
@@ -109,7 +101,8 @@ const puntos =
     {
       "lat": 19.4402817, "lng": -99.1766728
     }
-  ]
+  ];
+
 // TODO:  las funciones para obtener mis datos de la API
 // Resumen
 // Ranking
